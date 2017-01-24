@@ -1,0 +1,20 @@
+<div id="filterrific_results">
+
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Location</th>
+      <th>Room Nums</th>
+      <th>Bathroom Nums</th>
+    </tr>
+    <% listings.each do |listing| %>
+      <tr>
+        <td><%= listing.title %></td>
+        <td><%= listing.location %></td>
+        <td><%= listing.room_nums %></td>
+        <td><%= listing.bathroom_nums %></td>
+      </tr>
+    <% end %>
+  </table>
+  
+</div>

@@ -17,7 +17,7 @@
   <tbody>
     <% @listings.each do |listing| %>
       <tr>
-        <td><%= listing.type %></td>
+        <td><%= listing.category %></td>
         <td><%= listing.title %></td>
         <td><%= listing.location %></td>
         <td><%= listing.room_nums %></td>
@@ -33,3 +33,31 @@
 <br>
 
 <%= link_to 'New Listing', new_listing_path %>
+
+
+<%= form_for_filterrific @filterrific do |f| %>
+  <div>
+    Search
+    <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+    <%= f.text_field(
+      :search_query,
+      class: 'filterrific-periodically-observed'
+    ) %>
+  </div>
+
+  <div>
+      Room numbers
+      <%= f.select(
+        :with_room_nums,
+        @filterrific.select_options[:with_room_nums],
+        { include_blank: '- Any -' }
+      ) %>
+  </div>
+  <div>
+      Sorted by
+      <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by]) %>
+  </div>
+
+<% end %>
+
+<%= render partial: 'listings/list',  locals: { listings: @listings } %>
