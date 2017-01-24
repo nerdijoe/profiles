@@ -54,6 +54,7 @@ GEM
     execjs (2.7.0)
     faker (1.6.3)
       i18n (~> 0.5)
+    filterrific (2.1.2)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -150,6 +151,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   faker
+  filterrific
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.6)
@@ -162,4 +164,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.11.2
+   1.12.5
